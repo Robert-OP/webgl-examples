@@ -19,3 +19,7 @@ The vertex shader can, as needed, also do things like determine the coordinates 
 ### Fragment shader
 
 The `fragment shader` is called once for every pixel on each shape to be drawn, after the shape's vertices have been processed by the vertex shader. Its job is to determine the color of that pixel by figuring out which texel (that is, the pixel from within the shape's texture) to apply to the pixel, getting that texel's color, then applying the appropriate lighting to the color. The color is then returned to the WebGL layer by storing it in the special variable `gl_FragColor`. That color is then drawn to the screen in the correct position for the shape's corresponding pixel.
+
+## Applying color to the vertices
+
+In WebGL objects are built using `sets of vertices`, each of which has a `position` and a `color`. By default, all other pixels' colors (and all its other attributes, including position) are computed using `interpolation`, automatically creating smooth gradients.
